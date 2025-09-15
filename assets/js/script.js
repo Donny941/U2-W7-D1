@@ -58,6 +58,11 @@ submitButton.addEventListener("click", function (e) {
     petUserInsert[2],
     petUserInsert[3]
   );
+  allPets.forEach((existingPet) => {
+    Pet.sameOwner(newPet, existingPet);
+  });
+  //   Pet.sameOwner(allPets[0], allPets[1]);
+
   allPets.push(newPet);
   console.log(allPets);
 
@@ -114,6 +119,5 @@ class Pet {
       };
       appendAlert("Two Animals have same Owner!!", "warning");
     }
-    Pet.sameOwner(allPets[0], allPets[1]);
   }
 }
