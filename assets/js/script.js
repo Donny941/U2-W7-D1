@@ -58,13 +58,15 @@ submitButton.addEventListener("click", function (e) {
     petUserInsert[2],
     petUserInsert[3]
   );
-  allPets.forEach((existingPet) => {
-    Pet.sameOwner(newPet, existingPet);
-  });
-  //   Pet.sameOwner(allPets[0], allPets[1]);
+  // allPets.forEach((existingPet) => {
+  //   Pet.sameOwner(newPet, existingPet);
+  // });
 
   allPets.push(newPet);
   console.log(allPets);
+  if (allPets.length >= 2) {
+    Pet.sameOwner(allPets[0], allPets[1]);
+  }
 
   const exerciseDiv = document.querySelector(".exercise-2");
   const exerciseRow = exerciseDiv.querySelector(".row");
@@ -109,12 +111,10 @@ class Pet {
       const alertPlaceholder = document.getElementById("liveAlertPlaceholder");
       const appendAlert = (message, type) => {
         const wrapper = document.createElement("div");
-        wrapper.innerHTML = [
-          `<div class="alert alert-${type} alert-dismissible" role="alert">`,
-          `   <div>${message}</div>`,
-          '   <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>',
-          "</div>",
-        ].join("");
+        wrapper.innerHTML = `<div class="alert alert-${type} alert-dismissible" role="alert">
+           <div>${message}</div>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+          </div>`;
         alertPlaceholder.append(wrapper);
       };
       appendAlert("Two Animals have same Owner!!", "warning");
