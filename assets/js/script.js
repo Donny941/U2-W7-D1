@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 // Exercise - 1
 
 class User {
@@ -122,5 +121,3 @@ class Pet {
     }
   }
 }
-=======
->>>>>>> cea38b7dac64dfdd42498ffd84e3008d54211ad0
