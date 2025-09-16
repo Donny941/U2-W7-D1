@@ -61,7 +61,7 @@ submitButton.addEventListener("click", function (e) {
   // allPets.forEach((existingPet) => {
   //   Pet.sameOwner(newPet, existingPet);
   // });
-
+  // dovremmo esserci
   allPets.push(newPet);
   console.log(allPets);
   if (allPets.length >= 2) {
